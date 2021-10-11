@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 3%; margin-left: 15%">
+        <div class="container py-5 modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Update Trainee: {{aTrainee.name}}</h2>
+            </div>
+            <div class="modal-body">
+                <div class="py-1">
+                    <form class="form" action="/staff/staffUpdateTrainee/doEditTrainee" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <input type="hidden" name="id" value="{{aTrainee.id}}">
+                                            <label>Name</label>
+                                            <input class="form-control" type="text" name="name"  value="{{aTrainee.name}}">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" type="text" name="email" value="{{aTrainee.email}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <input class="form-control" type="text" name="age"  value="{{aTrainee.age}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <div class="form-group">
+                                            <label>Education</label>
+                                            <textarea class="form-control" rows="5"  name="education" >{{aTrainee.education}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <center> <div  class="col d-flex justify-content-end">
+                                <button class="btn btn-primary" type="submit">Save</button>
+                                <a href="/staff/staffViewTrainee" class="btn btn-primary">Cancel</a>
+                            </div>
+                            </center> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
